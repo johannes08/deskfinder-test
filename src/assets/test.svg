@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">
+    <!-- Raum -->
+    <rect x="50" y="50" width="300" height="200" fill="#e0e0e0" />
+
+    <!-- Tisch 1 -->
+    <rect x="100" y="100" width="80" height="80" fill="#8b4513" />
+    <text x="140" y="190" fill="white" font-size="16" font-weight="bold">1</text>
+
+    <!-- Tisch 2 -->
+    <rect x="220" y="100" width="80" height="80" fill="#8b4513" />
+    <text x="260" y="190" fill="white" font-size="16" font-weight="bold">2</text>
+
+    <!-- Tisch 3 -->
+    <rect x="100" y="220" width="80" height="80" fill="#8b4513" />
+    <text x="140" y="310" fill="white" font-size="16" font-weight="bold">3</text>
+
+    <!-- Tisch 4 -->
+    <rect x="220" y="220" width="80" height="80" fill="#8b4513" />
+    <text x="260" y="310" fill="white" font-size="16" font-weight="bold">4</text>
+</svg>
