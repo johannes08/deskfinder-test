@@ -1,0 +1,25 @@
+
+.imageMarkerLayer{
+  position: relative;
+  width: fit-content;
+
+  .img{
+
+
+
+  }
+
+
+
+
+}
+
+.marker{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  background: orange;
+  position: absolute;
+  display: grid;
+  place-content: center;
+}

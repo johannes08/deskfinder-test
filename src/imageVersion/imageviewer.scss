@@ -1,0 +1,31 @@
+
+
+.imageViewer{
+
+
+
+  .background{
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 90px;
+  }
+
+  .interaction{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+
+
+
+  }
+
+
+
+
+}
