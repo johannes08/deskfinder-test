@@ -1,0 +1,21 @@
+.cls-1 {
+    fill: none;
+}
+
+.cls-1, .cls-2 {
+    stroke: #1d1d1b;
+}
+
+.cls-2 {
+    fill: #fff;
+}
+
+#Tisch_15 {
+    fill: red;
+}
+
+.cls-2:hover {
+    cursor: pointer;
+    fill: orange;
+    transition: 250ms ease-in-out;
+}
