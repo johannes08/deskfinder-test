@@ -1,25 +1,34 @@
+import { useState } from 'react';
+import { ReactSVG } from 'react-svg';
 import './index.css';
 
 const SvgVersion = () => {
-    const handleClick = (e: React.MouseEvent<SVGRectElement, MouseEvent>) => {
+    const [selectedDesk, setSelectedDesk] = useState<string>('');
+
+    const handleClick = (e: any) => {
         const target = e.target as any;
-        console.dir(target)
-        alert(`Du hast ${target.id} ausgewählt`)
+        const classNames = Array.from(target.classList);
+
+        if (!classNames?.includes('desk')) return;
+
+        setSelectedDesk(target.id)
+
+        // alert(`Du hast ${target.id} ausgewählt`)
     }
 
     return (
-        <div>
-            <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 381.41 246.45">
-                <rect onClick={handleClick} id="Tisch_15" className="cls-2" x="135.64" y="122.3" width="52.7" height="85.14"/>
-                <rect onClick={handleClick} id="Tisch_14" className="cls-2" x="197.12" y="122.64" width="52.7" height="85.14"/>
-                <rect onClick={handleClick} id="Tisch_12" className="cls-2" x="135.62" y="29.22" width="52.7" height="85.14"/>
-                <rect onClick={handleClick} id="Tisch_13" className="cls-2" x="197.11" y="29.56" width="52.7" height="85.14"/>
-                <polyline className="cls-1" points=".5 0 .5 245.95 380.91 245.95 380.91 0"/>
-                <ellipse className="cls-1" cx="114.35" cy="69.26" rx="12.5" ry="17.91"/>
-                <ellipse className="cls-1" cx="114.01" cy="170.27" rx="12.5" ry="17.91"/>
-                <ellipse className="cls-1" cx="272.18" cy="66.31" rx="12.5" ry="17.91"/>
-                <ellipse className="cls-1" cx="273.53" cy="161.82" rx="12.5" ry="17.91"/>
-            </svg>
+        <div className='svg-container'>
+            <ReactSVG
+                src='https://gist.githubusercontent.com/tburakonat/9ec4de19ae045dd95a60c33e0884ca3c/raw/5fc3e4f86206c5a7dbdb20ba87bb2ed649a2a453/office-layout.svg'
+                onClick={handleClick}
+            />
+            <dialog open={!!selectedDesk}>
+                <p>Willst du {selectedDesk} buchen?</p>
+                <form method="dialog" style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <button onClick={() => setSelectedDesk('')}>Buchen</button>
+                    <button onClick={() => setSelectedDesk('')}>Abbrechen</button>
+                </form>
+            </dialog>
         </div>
     )
 

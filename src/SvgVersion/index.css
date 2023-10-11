@@ -1,21 +1,32 @@
-.cls-1 {
-    fill: none;
+.svg-container {
+    height: 900px;
+    display: grid;
+    place-items: center;
+    transform: rotate(0deg);
+    transition: all 300ms ease-in-out;
 }
 
-.cls-1, .cls-2 {
+#Desk rect {
+    fill: #fff;
     stroke: #1d1d1b;
 }
 
-.cls-2 {
-    fill: #fff;
-}
-
-#Tisch_15 {
+#Desk-14 {
     fill: red;
 }
 
-.cls-2:hover {
+#Desk rect:hover {
     cursor: pointer;
     fill: orange;
-    transition: 250ms ease-in-out;
+    transition: 150ms ease-in-out;
+}
+
+@media screen and (max-width:1000px) {
+    /* start of phone styles */
+    .svg-container {
+        height: 1000px;
+        margin-top: 200px;
+        transform: rotate(-90deg);
+        transition: all 300ms ease-in-out;
+    }
 }
