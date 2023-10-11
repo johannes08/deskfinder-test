@@ -13,25 +13,18 @@ function App() {
 
     return (
         <>
+            <div className="fab" onClick={() => setMode(prev => mode === 'img' ? 'svg' : 'img')}>
+                    Wechseln
+            </div>
+            {mode === 'img' &&
             <DummyFrame>
 
-                <div className="fab" onClick={() => setMode(prev => mode === 'img' ? 'svg' : 'img')}>
-                    Wechseln
-                </div>
+                
 
-                {mode === 'img' &&
-                    <ImageViewer/>
-                }
+                <ImageViewer/>
+            </DummyFrame>}
 
-                {mode === 'svg' &&
-                    <MapInteractionCSS>
-                        <img src={viteLogo} className="logo" alt="Vite logo"/>
-                        <SvgVersion/>
-                    </MapInteractionCSS>}
-
-            </DummyFrame>
-
-
+            { mode === 'svg' && <SvgVersion/> }
         </>
 
 
