@@ -28,9 +28,9 @@ const SvgVersion = () => {
 
     return (
         <>
-            <button onClick={() => setSvgVersion(!svgVersion)}>Switch SVG</button>
+            {/* <button onClick={() => setSvgVersion(!svgVersion)}>Switch SVG</button> */}
             <div className='svg-container'>
-                <TransformWrapper wheel={{ smoothStep: 0.05, step: 0.05 }}>
+                <TransformWrapper initialScale={0.9} wheel={{ smoothStep: 0.05, step: 0.05 }}>
                     <TransformComponent>
                         <ReactSVG
                             src={svgVersion ? v1 : v2}
