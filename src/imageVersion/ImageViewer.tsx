@@ -62,7 +62,6 @@ const ImageViewer: React.FunctionComponent<IImageViewer> = (props) => {
                     onChange={setValue}
                     minScale={1}
                     maxScale={3}
-                    showControls
                 >
                     <div className="interaction">
                         <ImageMarkerLayer desks={rentalData.office[shownOffice].desks} scale={value.scale} image={image}/>
