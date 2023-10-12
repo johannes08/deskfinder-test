@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
+import { TransformWrapper, TransformComponent} from 'react-zoom-pan-pinch';
 import './index.css';
 
 const SvgVersion = () => {
@@ -29,11 +30,15 @@ const SvgVersion = () => {
         <>
             <button onClick={() => setSvgVersion(!svgVersion)}>Switch SVG</button>
             <div className='svg-container'>
-                <ReactSVG
-                    src={svgVersion ? v1 : v2}
-                    onClick={handleClick}
-                    afterInjection={() => setSvgInjected(true)}
-                />
+                <TransformWrapper wheel={{ smoothStep: 0.05, step: 0.05 }}>
+                    <TransformComponent>
+                        <ReactSVG
+                            src={svgVersion ? v1 : v2}
+                            onClick={handleClick}
+                            afterInjection={() => setSvgInjected(true)}
+                        />
+                    </TransformComponent>
+                </TransformWrapper>
                 <dialog open={!!selectedDesk}>
                     <p>Willst du {selectedDesk} buchen?</p>
                     <form method="dialog" style={{display: 'flex', justifyContent: 'space-between'}}>
