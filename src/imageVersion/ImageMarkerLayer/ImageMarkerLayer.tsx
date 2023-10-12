@@ -1,6 +1,5 @@
 import React, {useMemo} from "react";
 import './imageMarkerLayer.scss'
-import deskOne from "../../assets/desk-group-1.jpeg";
 
 interface IImageMarkerLayer {
     desks: Array<{
@@ -11,15 +10,16 @@ interface IImageMarkerLayer {
         position_y: number;
     }>
     scale: number
+    image: string
 }
 const ImageMarkerLayer: React.FunctionComponent<IImageMarkerLayer> = (props) => {
-    const { desks, scale } = props;
+    const { desks, scale, image } = props;
 
-    const imgHeight = useMemo(() => window.innerHeight / 2, [])
+    const imgHeight = useMemo(() => window.innerHeight * .6, [])
 
     return (
         <div className="imageMarkerLayer" >
-            <img src={deskOne} className="img" alt="Vite logo" style={{ height: imgHeight }} />
+            <img src={image} className="img" alt="Vite logo" style={{ height: imgHeight }} />
 
             {desks.map(i => (
                 <div className="marker" style={{ top: i.position_y + '%', left: i.position_x + '%', transform: `scale(${1 / scale})` }}>

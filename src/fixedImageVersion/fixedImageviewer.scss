@@ -1,0 +1,27 @@
+
+
+.fixedImageViewer{
+
+
+
+  .background{
+    /* Add the blur effect */
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 10px;
+  }
+
+  .imageFrame{
+    display: flex;
+    justify-content: center;
+
+  }
+
+
+
+
+}

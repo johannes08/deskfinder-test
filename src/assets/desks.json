@@ -1,21 +1,70 @@
 {
 
-  "desks": [
-    {
-      "id": "1",
-      "name": "Tisch 1",
-      "short": "1",
-      "position_x": 66,
-      "position_y": 66
-    },
-    {
-      "id": "2",
-      "name": "Tisch 2",
-      "short": "2",
-      "position_x": 72.56,
-      "position_y": 49.43
-    }
-  ]
+ "office": [
+   {
+     "id": "1",
+     "name": "Büro 1",
+     "image": "/src/assets/expose.png",
+     "desks": [
+       {
+         "id": "1",
+         "name": "Tisch 1",
+         "short": "1",
+         "position_x": 35,
+         "position_y": 20
+       },
+       {
+         "id": "2",
+         "name": "Tisch 2",
+         "short": "2",
+         "position_x": 35,
+         "position_y": 27
+       }
+     ]
+   },
+   {
+     "id": "2",
+     "name": "Büro 2",
+     "image": "/src/assets/desk-group-1.jpeg",
+     "desks": [
+       {
+         "id": "3",
+         "name": "Tisch 3",
+         "short": "3",
+         "position_x": 66,
+         "position_y": 66
+       },
+       {
+         "id": "4",
+         "name": "Tisch 4",
+         "short": "4",
+         "position_x": 72.56,
+         "position_y": 49.43
+       }
+     ]
+   },
+   {
+     "id": "3",
+     "name": "Büro 3",
+     "image": "https://gist.githubusercontent.com/tburakonat/9ec4de19ae045dd95a60c33e0884ca3c/raw/5fc3e4f86206c5a7dbdb20ba87bb2ed649a2a453/office-layout.svg",
+     "desks": [
+       {
+         "id": "A",
+         "name": "Tisch A",
+         "short": "A",
+         "position_x": 66,
+         "position_y": 66
+       },
+       {
+         "id": "B",
+         "name": "Tisch B",
+         "short": "B",
+         "position_x": 72.56,
+         "position_y": 49.43
+       }
+     ]
+   }
+ ]
 
 
 }

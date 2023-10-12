@@ -1,30 +1,39 @@
-import {useState} from 'react'
+import React, {useState} from 'react'
 import {MapInteractionCSS} from "react-map-interaction";
-import viteLogo from './assets/test.svg'
 import './App.scss'
 import SvgVersion from './SvgVersion';
 import ImageViewer from "./imageVersion/ImageViewer.tsx";
 import DummyFrame from "./dummyframe/DummyFrame.tsx";
+import FixedImageViewer from "./fixedImageVersion/finxedImageViewer.tsx";
+import {IDictionary} from "./utils/useKeyEventListener.ts";
+import SvgVersionFixed from "./SvgVersionFixed/SvgVersionFixed.tsx";
 
 function App() {
 
-    const [mode, setMode] = useState('img')
+    const modes = ['img', 'fixedImg', 'svg', 'fixedSvg']
 
+    const [modeIndex, setModeIndex] = useState(0)
+
+    const mode = modes[modeIndex]
+    const components: IDictionary<React.ReactNode> = {
+        img: <ImageViewer/>,
+        svg: <SvgVersion/>,
+        fixedImg: <FixedImageViewer />,
+        fixedSvg: <SvgVersionFixed />,
+    }
 
     return (
         <>
-            <div className="fab" onClick={() => setMode(prev => mode === 'img' ? 'svg' : 'img')}>
-                    Wechseln
-            </div>
-            {mode === 'img' &&
             <DummyFrame>
 
-                
+                <div className="fab" onClick={() => setModeIndex(prevState => (prevState + 1) % modes.length)}>
+                    ({modes[modeIndex]}) Wechseln
+                </div>
 
-                <ImageViewer/>
-            </DummyFrame>}
+                { components[mode] ?? null }
+            </DummyFrame>
 
-            { mode === 'svg' && <SvgVersion/> }
+
         </>
 
 

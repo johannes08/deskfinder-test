@@ -1,7 +1,7 @@
 @import "../App";
 
 .dummy{
-  background: grey;
+
 
 
   .header{
@@ -38,10 +38,10 @@
     &Inner{
       width: min(720px, 100vw);
       background: white;
-      height: 50vh;
+      height: 40vh;
       border-top-left-radius: 20px;
       border-top-right-radius: 20px;
-
+      box-shadow:  20px 20px 60px #bebebe;
 
     }
 

@@ -1,0 +1,28 @@
+.svg-container {
+    height: 900px;
+    display: grid;
+    place-items: center;
+    transform: rotate(0deg);
+    transition: all 300ms ease-in-out;
+}
+
+.desk {
+    fill: #fff;
+    stroke: #1d1d1b;
+}
+
+.desk:hover {
+    cursor: pointer;
+    fill: orange;
+    transition: 150ms ease-in-out;
+}
+
+@media screen and (max-width:1000px) {
+    /* start of phone styles */
+    .svg-container {
+        height: 1000px;
+        margin-top: 200px;
+        transform: rotate(-90deg);
+        transition: all 300ms ease-in-out;
+    }
+}
