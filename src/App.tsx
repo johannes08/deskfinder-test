@@ -7,11 +7,12 @@ import DummyFrame from "./dummyframe/DummyFrame.tsx";
 import FixedImageViewer from "./fixedImageVersion/finxedImageViewer.tsx";
 import {IDictionary} from "./utils/useKeyEventListener.ts";
 import SvgVersionFixed from "./SvgVersionFixed/SvgVersionFixed.tsx";
+import SecondSvg from "./SecondSVG/SecondSVG.tsx";
 import ImageViewerTwo from "./imageVersionTwo/ImageViewerTwo.tsx";
 
 function App() {
 
-    const modes = ['img', 'imgV2','fixedImg', 'svg', 'fixedSvg']
+    const modes = ['img', 'imgV2','fixedImg', 'svg', 'fixedSvg', 'secondSvg']
 
     const [modeIndex, setModeIndex] = useState(0)
 
@@ -21,7 +22,8 @@ function App() {
         svg: <SvgVersion/>,
         fixedImg: <FixedImageViewer />,
         fixedSvg: <SvgVersionFixed />,
-        imgV2: <ImageViewerTwo />
+        imgV2: <ImageViewerTwo />,
+        secondSvg: <SecondSvg />
     }
 
     return (
