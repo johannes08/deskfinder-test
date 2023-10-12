@@ -19,6 +19,16 @@
     display: flex;
     justify-content: center;
 
+    .imageMarkerLayer{
+      height: calc(60vh - 20px);
+      overflow-y: scroll;
+    }
+
+    img{
+      width: min(720px, 100vw);
+      object-fit: cover;
+    }
+
   }
 
 
