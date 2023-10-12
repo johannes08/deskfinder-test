@@ -65,15 +65,55 @@
          "id": "A",
          "name": "Tisch A",
          "short": "A",
-         "position_x": 66,
-         "position_y": 66
+         "position_x": 52.4,
+         "position_y": 14
        },
        {
          "id": "B",
          "name": "Tisch B",
          "short": "B",
-         "position_x": 72.56,
-         "position_y": 49.43
+         "position_x": 52.4,
+         "position_y": 31.4
+       },{
+         "id": "C",
+         "name": "Tisch C",
+         "short": "C",
+         "position_x": 57.4,
+         "position_y": 14
+       },
+       {
+         "id": "D",
+         "name": "Tisch D",
+         "short": "D",
+         "position_x": 57.4,
+         "position_y": 31.4
+       },
+       {
+         "id": "E",
+         "name": "Tisch E",
+         "short": "E",
+         "position_x": 72.9,
+         "position_y": 14
+       },
+       {
+         "id": "F",
+         "name": "Tisch F",
+         "short": "F",
+         "position_x": 72.9,
+         "position_y": 31.4
+       },{
+         "id": "G",
+         "name": "Tisch G",
+         "short": "G",
+         "position_x": 77.9,
+         "position_y": 14
+       },
+       {
+         "id": "H",
+         "name": "Tisch H",
+         "short": "H",
+         "position_x": 77.9,
+         "position_y": 31.4
        }
      ]
    }

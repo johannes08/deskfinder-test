@@ -1,10 +1,11 @@
 // @ts-ignore
 import {MapInteractionCSS} from "react-map-interaction";
-import './imageviewer.scss'
-import React, {useMemo, useState} from "react";
+import './imageviewerTwo.scss'
+import React, { useState} from "react";
 import ImageMarkerLayer from "./ImageMarkerLayer/ImageMarkerLayer.tsx";
 import rentalData from '../assets/desks.json'
 import useKeyEventListener from "../utils/useKeyEventListener.ts";
+import {TransformComponent, TransformWrapper} from "react-zoom-pan-pinch";
 
 interface IMapInteractionData {
     scale: number;
@@ -18,7 +19,7 @@ interface IImageViewer {
 
 }
 
-const ImageViewer: React.FunctionComponent<IImageViewer> = (props) => {
+const ImageViewerTwo: React.FunctionComponent<IImageViewer> = (props) => {
     const {} = props;
 
     const [shownOffice, setShownOffice] = useState(0)
@@ -56,19 +57,29 @@ const ImageViewer: React.FunctionComponent<IImageViewer> = (props) => {
 
             </div>
             <div className="mapInteraction">
-                <MapInteractionCSS
-                    value={value}
-                    onChange={setValue}
-                    minScale={1}
-                    maxScale={3}
+
+                <TransformWrapper
+                    initialScale={1}
+                    initialPositionX={200}
+                    initialPositionY={100}
+                    onWheel={d => setValue({
+                        scale: d.state.scale,
+                        translation: {
+                            x: d.state.positionX,
+                            y: d.state.positionY,
+                        }
+                    })}
+                    limitToBounds
                 >
-                    <div className="interaction">
-                        <ImageMarkerLayer desks={rentalData.office[shownOffice].desks} scale={value.scale} image={image}/>
-                    </div>
-                </MapInteractionCSS>
+                    <TransformComponent>
+                        <div className="interaction">
+                            <ImageMarkerLayer desks={rentalData.office[shownOffice].desks} scale={value.scale} image={image}/>
+                        </div>
+                    </TransformComponent>
+                </TransformWrapper>
             </div>
         </div>
     )
 }
 
-export default ImageViewer;
+export default ImageViewerTwo;
